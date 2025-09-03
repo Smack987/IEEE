@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParaPo! Application</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Role Selection Screen -->
+        <div class="screen active" id="role-selection">
+            <div class="header">
+                <h1>Welcome to ParaPo!</h1>
+                <p>Choose how you'd like to continue</p>
+            </div>
+            
+            <div class="role-options">
+                <div class="role-card">
+                    <div class="role-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="role-title">Passenger</div>
+                    <div class="role-description">Book rides and travel safely</div>
+                    <button class="btn btn-primary" onclick="showScreen('passenger-login')">Get Started</button>
+                </div>
+                
+                <div class="role-card">
+                    <div class="role-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="role-title">Driver</div>
+                    <div class="role-description">Start earning by driving</div>
+                    <button class="btn btn-primary" onclick="showScreen('driver-login')">Get Started</button>
+                </div>
+                
+                <div class="role-card">
+                    <div class="role-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="role-title">Admin</div>
+                    <div class="role-description">Manage platform operations</div>
+                    <button class="btn btn-primary" onclick="showScreen('admin-login')">Get Started</button>
+                </div>
+            </div>
+            
+            <div class="footer">
+                ParaPo! © 2025 | Safe Travels
+            </div>
+        </div>
+        
+        <!-- Passenger Login Screen -->
+        <div class="screen" id="passenger-login">
+            <a href="#" class="link-back" onclick="showScreen('role-selection')">
+                <i class="fas fa-arrow-left"></i> Back to role selection
+            </a>
+            
+            <h2>Login As Passenger</h2>
+            <p class="mb-20">Welcome back!</p>
+            
+            <div class="form-group">
+                <label for="passenger-email">Email Address</label>
+                <input type="email" class="form-control" id="passenger-email" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="passenger-password">Password</label>
+                <input type="password" class="form-control" id="passenger-password" placeholder="......">
+            </div>
+            
+            <!-- Remember Me Checkbox -->
+            <div class="remember-me">
+                <input type="checkbox" id="passenger-remember">
+                <label for="passenger-remember">Remember me</label>
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="showScreen('passenger-dashboard')">Sign In</button>
+            
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+            
+            <div class="text-center mt-20">
+                <a href="#" class="link" onclick="showScreen('passenger-signup')">Don't have an account? Sign up</a>
+            </div>
+        </div>
+        
+        <!-- Passenger Signup Screen -->
+        <div class="screen" id="passenger-signup">
+            <a href="#" class="link-back" onclick="showScreen('role-selection')">
+                <i class="fas fa-arrow-left"></i> Back to role selection
+            </a>
+            
+            <h2>Sign Up As Passenger</h2>
+            <p class="mb-20">Create your account to get started</p>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="passenger-firstname">First Name</label>
+                    <input type="text" class="form-control" id="passenger-firstname">
+                </div>
+                
+                <div class="form-group">
+                    <label for="passenger-lastname">Last Name</label>
+                    <input type="text" class="form-control" id="passenger-lastname">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="passenger-signup-email">Email Address</label>
+                <input type="email" class="form-control" id="passenger-signup-email" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="passenger-signup-password">Password</label>
+                <input type="password" class="form-control" id="passenger-signup-password" placeholder="......">
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="showScreen('passenger-dashboard')">Create Account</button>
+            
+            <div class="text-center mt-20">
+                <a href="#" class="link" onclick="showScreen('passenger-login')">Already have an account? Sign in</a>
+            </div>
+        </div>
+        
+        <!-- Passenger Dashboard -->
+        <div class="screen" id="passenger-dashboard">
+            <div class="header">
+                <h1>Passenger Dashboard</h1>
+                <p>Book your next ride or view your travel history</p>
+            </div>
+            
+            <div class="card">
+                <h3>Book a Ride</h3>
+                <p class="mb-10">Tap to continue</p>
+                <button class="btn btn-primary" onclick="showScreen('book-ride')">Book Ride</button>
+            </div>
+            
+            <div class="card">
+                <h3>Ride History</h3>
+                <p class="mb-10">Tap to continue</p>
+                <button class="btn btn-secondary">View History</button>
+            </div>
+            
+            <div class="card">
+                <h3>Payment Method</h3>
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">...... 1234</div>
+                        <div class="list-item-subtitle">Expires 12/26</div>
+                    </div>
+                    <div class="list-item-value">
+                        <i class="fas fa-credit-card text-blue"></i>
+                    </div>
+                </div>
+                <button class="btn btn-secondary">
+                    <i class="fas fa-plus"></i> Add Payment Method
+                </button>
+            </div>
+            
+            <div class="footer">
+                <a href="#" class="link" onclick="showScreen('role-selection')">Switch Role</a> | 
+                <a href="#" class="link">Help Center</a>
+            </div>
+        </div>
+        
+        <!-- Book Ride Screen -->
+        <div class="screen" id="book-ride">
+            <a href="#" class="link-back" onclick="showScreen('passenger-dashboard')">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+            
+            <h2>Book a New Ride</h2>
+            
+            <div class="form-group">
+                <label for="from-location">From</label>
+                <input type="text" class="form-control" id="from-location" placeholder="Enter pickup location">
+            </div>
+            
+            <div class="form-group">
+                <label for="to-location">To</label>
+                <input type="text" class="form-control" id="to-location" placeholder="Enter destination">
+            </div>
+            
+            <div class="form-group">
+                <label for="ride-time">When</label>
+                <select class="form-control" id="ride-time">
+                    <option>Now</option>
+                    <option>Schedule for later</option>
+                </select>
+            </div>
+            
+            <button class="btn btn-primary btn-large">Find Drivers</button>
+            
+            <div class="dashboard-section">
+                <h3 class="section-title">Recent Rides</h3>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Home – Office</div>
+                        <div class="list-item-subtitle">Today, 8:30 AM</div>
+                    </div>
+                    <div class="list-item-value">$12.50</div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Mall – Home</div>
+                        <div class="list-item-subtitle">Yesterday, 5:15 PM</div>
+                    </div>
+                    <div class="list-item-value">$18.75</div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Airport – Hotel</div>
+                        <div class="list-item-subtitle">3 days ago</div>
+                    </div>
+                    <div class="list-item-value">$45.00</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Driver Login Screen -->
+        <div class="screen" id="driver-login">
+            <a href="#" class="link-back" onclick="showScreen('role-selection')">
+                <i class="fas fa-arrow-left"></i> Back to role selection
+            </a>
+            
+            <h2>Login As Driver</h2>
+            <p class="mb-20">Welcome back!</p>
+            
+            <div class="form-group">
+                <label for="driver-email">Email Address</label>
+                <input type="email" class="form-control" id="driver-email" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="driver-password">Password</label>
+                <input type="password" class="form-control" id="driver-password" placeholder="......">
+            </div>
+            
+            <!-- Remember Me Checkbox -->
+            <div class="remember-me">
+                <input type="checkbox" id="driver-remember">
+                <label for="driver-remember">Remember me</label>
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="showScreen('driver-dashboard')">Sign In</button>
+            
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+            
+            <div class="text-center mt-20">
+                <a href="#" class="link" onclick="showScreen('driver-signup')">Don't have an account? Sign up</a>
+            </div>
+        </div>
+        
+        <!-- Driver Signup Screen -->
+        <div class="screen" id="driver-signup">
+            <a href="#" class="link-back" onclick="showScreen('role-selection')">
+                <i class="fas fa-arrow-left"></i> Back to role selection
+            </a>
+            
+            <h2>Sign Up As Driver</h2>
+            <p class="mb-20">Create your account to get started</p>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="driver-firstname">First Name</label>
+                    <input type="text" class="form-control" id="driver-firstname">
+                </div>
+                
+                <div class="form-group">
+                    <label for="driver-lastname">Last Name</label>
+                    <input type="text" class="form-control" id="driver-lastname">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="driver-signup-email">Email Address</label>
+                <input type="email" class="form-control" id="driver-signup-email" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="driver-signup-password">Password</label>
+                <input type="password" class="form-control" id="driver-signup-password" placeholder="......">
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="showScreen('driver-dashboard')">Create Account</button>
+            
+            <div class="text-center mt-20">
+                <a href="#" class="link" onclick="showScreen('driver-login')">Already have an account? Sign in</a>
+            </div>
+        </div>
+        
+        <!-- Driver Dashboard -->
+        <div class="screen" id="driver-dashboard">
+            <div class="header">
+                <h1>Driver Dashboard</h1>
+                <p>Track your earnings and manage your rides</p>
+            </div>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-label">Today's Earnings</div>
+                    <div class="stat-value">$127.50</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">Hours Driven</div>
+                    <div class="stat-value">4.2h</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">Trips Completed</div>
+                    <div class="stat-value">12</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-label">Rating</div>
+                    <div class="stat-value">4.9</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Driver Status</h3>
+                <div class="form-group">
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span>Go Online</span>
+                </div>
+                <button class="btn btn-secondary">Take a Break</button>
+            </div>
+            
+            <div class="dashboard-section">
+                <h3 class="section-title">Recent Trips</h3>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Downtown – Airport</div>
+                        <div class="list-item-subtitle">2 hours ago</div>
+                    </div>
+                    <div class="list-item-value">$25.00</div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Mall – University</div>
+                        <div class="list-item-subtitle">3 hours ago</div>
+                    </div>
+                    <div class="list-item-value">$15.50</div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Hotel – Station</div>
+                        <div class="list-item-subtitle">5 hours ago</div>
+                    </div>
+                    <div class="list-item-value">$18.75</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Current Location</h3>
+                <p>Downtown Financial District</p>
+            </div>
+            
+            <div class="footer">
+                <a href="#" class="link" onclick="showScreen('role-selection')">Switch Role</a> | 
+                <a href="#" class="link">Driver Support</a>
+            </div>
+        </div>
+        
+        <!-- Admin Login Screen -->
+        <div class="screen" id="admin-login">
+            <a href="#" class="link-back" onclick="showScreen('role-selection')">
+                <i class="fas fa-arrow-left"></i> Back to role selection
+            </a>
+            
+            <h2>Login As Admin</h2>
+            <p class="mb-20">Welcome back!</p>
+            
+            <div class="form-group">
+                <label for="admin-email">Email Address</label>
+                <input type="email" class="form-control" id="admin-email" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="admin-password">Password</label>
+                <input type="password" class="form-control" id="admin-password" placeholder="......">
+            </div>
+            
+            <!-- Remember Me Checkbox -->
+            <div class="remember-me">
+                <input type="checkbox" id="admin-remember">
+                <label for="admin-remember">Remember me</label>
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="showScreen('admin-dashboard')">Sign In</button>
+            
+            <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+            </div>
+            
+            <div class="text-center mt-20">
+                <a href="#" class="link" onclick="showScreen('admin-signup')">Don't have an account? Sign up</a>
+            </div>
+        </div>
+        
+        <!-- Admin Signup Screen -->
+        <div class="screen" id="admin-signup">
+            <a href="#" class="link-back" onclick="showScreen('role-selection')">
+                <i class="fas fa-arrow-left"></i> Back to role selection
+            </a>
+            
+            <h2>Sign Up As Admin</h2>
+            <p class="mb-20">Create your account to get started</p>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for极="admin-firstname">First Name</label>
+                    <input type="text" class="form-control" id="admin-firstname">
+                </div>
+                
+                <div class="form-group">
+                    <label for="admin-lastname">Last Name</label>
+                    <极input type="text" class="form-control" id="admin-lastname">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="admin-signup-email">Email Address</label>
+                <input type="email" class="form-control" id="admin-signup-email" placeholder="your@email.com">
+            </div>
+            
+            <div class="form-group">
+                <label for="admin-sign极up-password">Password</label>
+                <input type="password" class="form-control" id="admin-signup-password" placeholder="......">
+            </div>
+            
+            <button class="btn btn-primary btn-large" onclick="showScreen('admin-dashboard')">Create Account</button>
+            
+            <div class="text-center mt-20">
+                <a href="#" class="link" onclick="showScreen('admin-log极in')">Already have an account? Sign in</a>
+            </div>
+        </div>
+        
+        <!-- Admin Dashboard -->
+        <div class="screen" id="admin-dashboard">
+            <div class="header">
+                <h1>ParaPo! Admin</h1>
+                <p>Monitor platform performance and manage operations</p>
+            </div>
+            
+            <div class="dashboard-stats">
+                <div class="stat-card bg-blue">
+                    <div class="stat-label">Total Users</div>
+                    <div class="stat-value">15,420</div>
+                    <div class="stat-label">+12%</div>
+                </div>
+                
+                <div class="stat-card bg-light-blue">
+                    <div class="stat-label">Active Drivers</极div>
+                    <div class="stat-value">2,847</div>
+                    <div class="stat-label">+8%</div>
+                </div>
+                
+                <div class="stat-card bg-green">
+                    <div class="stat-label">Daily Revenue</div>
+                    <div class="stat-value">$45,230</div>
+                    <div class="stat-label">+15%</div>
+                </div>
+                
+                <div class="stat-card bg-orange">
+                    <div class="stat-label">Rides Today</div>
+                    <div class="stat-value">1,234</div>
+                    <div class="stat-label">+22%</div>
+                </div>
+            </div>
+            
+            <div class="dashboard-section">
+                <h3 class="section-title">Pending Actions</h3>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Driver Verification</div>
+                        <div class="list-item-subtitle">23 items pending</div>
+                    </div>
+                    <div class="list-item-value text-blue">High Review</div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">User Support Tickets</div>
+                        <div class="list-item-subtitle">47 items pending</div>
+                    </极div>
+                    <div class="list-item-value text-orange">Medium Review</div>
+                </div>
+            </div>
+            
+            <div class="dashboard-section">
+                <h3 class="section-title">Recent Activity</h3>
+                
+                <div class="极list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">New driver John Smith registered</div>
+                        <div class="list-item-subtitle">2 minutes ago</div>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">High demand area detected: Downtown</div>
+                        <div class="list-item-subtitle">15 minutes ago</div>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Driver complaint resolved: Case #1245</div>
+                        <div class="list-item-subtitle">1 hour ago</div>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-content">
+                        <div class="list-item-title">Daily revenue target exceeded</div>
+                        <div class="list-item-subtitle极">2 hours ago</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <a href="#" class="link" onclick="showScreen('role-selection')">Switch Role</a> | 
+                <a href="#" class="link">Admin Settings</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

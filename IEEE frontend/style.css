@@ -1,0 +1,452 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #3a86ff 0%, #4cc9f0 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 480px;
+    margin: 0 auto;
+    background: white;
+    min-height: calc(100vh - 40px);
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.screen {
+    display: none;
+    padding: 20px;
+    min-height: calc(100vh - 40px);
+}
+
+.active {
+    display: block;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 25px 0;
+    background: linear-gradient(135deg, #3a86ff 0%, #4cc9f0 100%);
+    color: white;
+    margin: -20px -20px 20px -20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3a86ff 0%, #4cc9f0 100%);
+    color: white;
+    box-shadow: 0 4px 10px rgba(58, 134, 255, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(58, 134, 255, 0.5);
+}
+
+.btn-secondary {
+    background: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #e9ecef;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #4ade80 0%, #3ab8e0 100%);
+    color: white;
+    box-shadow: 0 4px 10px rgba(76, 222, 128, 0.4);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(76, 222, 128, 0.5);
+}
+
+.btn-large {
+    padding: 18px;
+    font-size: 18px;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.card-icon {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #3a86ff;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-control {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #3a86ff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.2);
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Link Styles */
+.link {
+    color: #3a86ff;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin: 10px 0;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #2a75f0;
+}
+
+.link-back {
+    display: flex;
+    align-items: center;
+    color: #3a86ff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+}
+
+.link-back:hover {
+    color: #2a75f0;
+}
+
+/* Dashboard Styles */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3a86ff;
+    margin: 10px 0;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #666;
+}
+
+.dashboard-section {
+    margin: 25px 0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* List Styles */
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+.list-item-content {
+    flex: 1;
+}
+
+.list-item-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.list-item-subtitle {
+    font-size: 14px;
+    color: #666;
+}
+
+.list-item-value {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Role Selection Styles */
+.role-options {
+    margin: 30px 0;
+}
+
+.role-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.role-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.role-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #3a86ff 0%, #4cc9f0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #3a86ff;
+}
+
+.role-description {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    color: #666;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background: linear-gradient(135deg, #3a86ff 0%, #4cc9f0 100%);
+}
+
+input:checked + .slider:before {
+    transform: translateX(30px);
+}
+
+/* Status Indicators */
+.status-online {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #4cc9f0;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/* Color Classes */
+.bg-blue { 
+    background: linear-gradient(135deg, #3a86ff 0%, #4cc9f0 100%);
+    color: white; 
+}
+
+.bg-light-blue { 
+    background: linear-gradient(135deg, #4cc9f0 0%, #83d8ff 100%);
+    color: white; 
+}
+
+.bg-green { 
+    background: linear-gradient(135deg, #4ade80 0%, #3ab8e0 100%);
+    color: white; 
+}
+
+.bg-orange { 
+    background: linear-gradient(135deg, #fb8500 0%, #ffb347 100%);
+    color: white; 
+}
+
+.text-blue { color: #3a86ff; }
+.text-green { color: #4ade80; }
+.text-orange { color: #fb8500; }
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.mt-10 { margin-top: 10px; }
+.mt-20 { margin-top: 20px; }
+.mb-10 { margin-bottom: 10px; }
+.mb-20 { margin-bottom: 20px; }
+
+/* Background patterns */
+.pattern-dots {
+    background-image: radial-gradient(#3a86ff 1px, transparent 1px);
+    background-size: 15px 15px;
+    background-color: #f8f9fa;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.screen.active {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Remember Me Checkbox */
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: #3a86ff;
+}
+
+.remember-me label {
+    margin: 0;
+    font-size: 15px;
+    color: #555;
+    cursor: pointer;
+}
+
+/* Forgot Password Link */
+.forgot-password {
+    text-align: right;
+    margin: 10px 0 20px;
+}
+
+.forgot-password a {
+    color: #3a86ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
